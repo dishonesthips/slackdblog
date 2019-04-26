@@ -22,7 +22,7 @@ We started by taking advantage of Slack's reply thread structure to build a key/
 * 🙉 single value push front -- we could treat only the very first reply in the thread as the value
 * 🐒 single value push back -- we could treat only the most recent reply in the thread as the value
 
-Those emojis aren't just for fun. We'll also need a way to store metadata with the keys to identify how to grab the coresponding values. For that, let's simply place the emojis after the key. And we aren't limited to just one emoji, we can have as much metadata as we want. SlackDB v0.1.0 supports constant, 🚯, and undeletable, ⚓, keys.
+Those emojis aren't just for fun. We'll also need a way to store metadata with the keys to identify how to grab the coresponding values. For that, let's simply place the emojis after the key. And why limit ourselves to just one emoji, we can have as much metadata as we want. SlackDB v0.1.0 supports constant, 🚯, and undeletable, ⚓, keys.
 
 <img src="key_example.png" width="360">
 
@@ -32,4 +32,5 @@ I need persistence to use SlackDB, a library that I made to solve for persistenc
 
 Let's store the state of that map in a supervisor channel, using SlackDB. On server startup, we'll look inside that channel and pull the state. I'll still keep a copy in memory for quick access, but whenever the state is altered, I'll update the local copy as well as the supervisor channel. Now, the only channel ID I need is that of the supervisor channel. Set it and forget it. 
 
+And that's it. All that's left now is to write the library. Luckily, I already did that for you and you can find it (here)[https://github.com/azohra/SlackDB].
 
