@@ -14,9 +14,16 @@ What the fuck??
   
 The goal was to allow users to select a message and get Jeanie to give them a run down of whatever acronyms were used. We also wanted a way to croudsource the acronyms and use a voting system to settle disputes. Honestly, we could have done it with any regular database and a web front-end (and the UX would have suffered for it) but we used this as an excuse to build SlackDB.
 
-So how do you go about using Slack as a database?
+## So how do you go about using Slack as a database?
 
-We started by taking advantage of Slack's reply thread structure. Messages are keys and replies to that message are values. 
+We started by taking advantage of Slack's reply thread structure to build a key/value system. A message is a key and replies to that message are values. Simple enough; but how do we pick one value if there's an entire thread of posts? If we put on our thinking caps, we can identify 4 basic types of keys that Slack could support:
+* 👍 votable -- we could treat the replies to a key as a ballot where reactions represent support for that particular value. winner takes all.
+* 👪 multiple -- we could treat the entire reply thread as an array
+* 🙉 single value push front -- we could treat only the very first reply in the thread as the value
+* 🐒 single value push back -- we could treat only the most recent reply in the thread as the value
 
+Those emojis aren't just for fun. We'll also need a way to store metadata with the keys to identify how we want to grab the coresponding values. For that, we can simply place the emojis after the key. And we aren't limited to just one emoji. SlackDB v0.1.0 also supports constant keys, 🚯, and undeletable keys, ⚓, that can be appended to a key to add metadata.
+
+<img src="assets/key_example.png" width="360">
 
 
