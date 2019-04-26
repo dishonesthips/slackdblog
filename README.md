@@ -32,7 +32,7 @@ We need persistence to use SlackDB, a library made to solve for persistence. Luc
 
 Let's store the state of that map in a supervisor channel, using SlackDB. On server startup, we'll look inside that channel and pull the state. We can still keep a copy in memory for quick access, but whenever the state is altered, let's update the local copy as well as the supervisor channel. Now, the only channel ID you need is that of the supervisor channel. Set it and forget it. 
 
-And that's it (barring a bunch of other, less structural complexities). All that's left now is to write the library. Luckily, I already did that for you and you can find it [here](https://github.com/azohra/SlackDB).
+And that's it (barring a bunch of other, less structural complexities). All that's left now is to write the library. Luckily, I already did that for you and you can find it on [GitHub](https://github.com/azohra/SlackDB) and [Hexdocs](https://hexdocs.pm/slackdb/0.1.0).
 
 Dope. Now we can make our acronym bot and have users directly interact with our database. Croudsource of Truth.
 
