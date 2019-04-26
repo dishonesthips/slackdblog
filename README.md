@@ -8,11 +8,15 @@ The first incarnation of SlackDB was simply a private channel to which Jeanie wo
 
 A few weeks later, one of our coworkers suggested an acronym bot for our Slack workspace. There were so many acronyms flying around that it was hard to keep up. 
 
-> INSERT A SENTENCE WITH A BUNCH OF ACRONYMS
+> GCP is having trouble. The GCLB fronting GKE is not communicating with the PAN which is causing the ILB to fail its health check. We should check the WAF to see if packets are being dropped.
+
 What the fuck??
   
-The goal was to allow users to select a message and get Jeanie to give them a run down of whatever acronyms were used. We also wanted a way to croudsource the acronyms and use a voting system to settle disputes. Honestly, we could have done it with a regular database and a web front-end (and the UX would have suffered for it) but we used this as an excuse to build SlackDB.
+The goal was to allow users to select a message and get Jeanie to give them a run down of whatever acronyms were used. We also wanted a way to croudsource the acronyms and use a voting system to settle disputes. Honestly, we could have done it with any regular database and a web front-end (and the UX would have suffered for it) but we used this as an excuse to build SlackDB.
 
 So how do you go about using Slack as a database?
+
+We started by taking advantage of Slack's reply thread structure. Messages are keys and replies to that message are values. 
+
 
 
