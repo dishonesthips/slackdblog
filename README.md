@@ -22,8 +22,8 @@ We started by taking advantage of Slack's reply thread structure to build a key/
 * 🙉 single value push front -- we could treat only the very first reply in the thread as the value
 * 🐒 single value push back -- we could treat only the most recent reply in the thread as the value
 
-Those emojis aren't just for fun. We'll also need a way to store metadata with the keys to identify how we want to grab the coresponding values. For that, we can simply place the emojis after the key. And we aren't limited to just one emoji. SlackDB v0.1.0 also supports constant keys, 🚯, and undeletable keys, ⚓, that can be appended to a key to add metadata.
+Those emojis aren't just for fun. We'll also need a way to store metadata with the keys to identify how to grab the coresponding values. For that, let's simply place the emojis after the key. And we aren't limited to just one emoji. SlackDB v0.1.0 supports constant, 🚯, and undeletable, ⚓, keys.
 
-<img src="assets/key_example.png" width="360">
+<img src="key_example.png" width="360">
 
-
+Looks good so far. 
