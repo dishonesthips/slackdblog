@@ -34,7 +34,7 @@ Let's store the state of that map in a supervisor channel, using SlackDB. On ser
 
 And that's it (barring a bunch of other, less structural complexities). All that's left now is to write the library. Luckily, I already did that for you and you can find it on [GitHub](https://github.com/azohra/SlackDB) and [Hexdocs](https://hexdocs.pm/slackdb/0.1.0).
 
-Dope. Now we can make our acronym bot and have users directly interact with our database. Croudsource of Truth.
+Dope. Now we can make our acronym bot and have users directly interact with our database. Crowdsource of Truth.
 
 
 written by: Borna Houmani-Farahani
