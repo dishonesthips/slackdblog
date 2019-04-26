@@ -22,8 +22,13 @@ We started by taking advantage of Slack's reply thread structure to build a key/
 * 🙉 single value push front -- we could treat only the very first reply in the thread as the value
 * 🐒 single value push back -- we could treat only the most recent reply in the thread as the value
 
-Those emojis aren't just for fun. We'll also need a way to store metadata with the keys to identify how to grab the coresponding values. For that, let's simply place the emojis after the key. And we aren't limited to just one emoji. SlackDB v0.1.0 supports constant, 🚯, and undeletable, ⚓, keys.
+Those emojis aren't just for fun. We'll also need a way to store metadata with the keys to identify how to grab the coresponding values. For that, let's simply place the emojis after the key. And we aren't limited to just one emoji, we can have as much metadata as we want. SlackDB v0.1.0 supports constant, 🚯, and undeletable, ⚓, keys.
 
 <img src="key_example.png" width="360">
 
-Looks good so far. 
+Looks good so far but if you're familiar with Slack's Web API, you may have already identified a potential annoyance with programatically posting messages to channels: you need the channel ID. It's not difficult to get a channel's ID but if you have to look up an ID every time you need to interact with the SlackDB library then it's gonna suck. SlackDB should obscure that from the user which is why it needs to maintain a map of channel names 'registered' with SlackDB and their coresponding IDs. This isn't difficult to implement with an OTP GenServer but what happens when my server goes down? I don't want to lose that map. Herein lies a chicken and egg problem. 
+
+I need persistence to use SlackDB, a library that I made to solve for persistence. Luckily, I have SlackDB, a library that I made to solve for persistence. 
+
+
+
