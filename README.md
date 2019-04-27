@@ -1,4 +1,4 @@
-# Let's Turn Slack Into A Database (working title)
+# Let's Turn Slack Into a Database
 
 Everyone in your (my) company uses Slack. On the internal tools team at Loblaw Digital, we use Slack as a direct portal to our clients, who just so happen to be our colleagues. Why wouldn't we take advantage of this platform with great developer tools to reduce toil, increase happiness, and get shit done quicker and easier for our friends? We call it ChatOps, and our team's main product is Jeanie, a Slack app who hosts a bevy of tools that our coworkers use on a daily basis. 
 
